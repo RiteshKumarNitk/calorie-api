@@ -1,11 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import User from '../models/User'; // Adjust the path to your User model
+import { User } from '../models/User'; // Adjust the path to your User model
 
 interface AuthenticatedRequest extends Request {
   user?: any; // Or a more specific User type if you have one
+  headers: any; // Add headers property
 }
-
+ 
 const authMiddleware = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
   const authHeader = req.headers.authorization;
 
@@ -28,4 +29,4 @@ const authMiddleware = async (req: AuthenticatedRequest, res: Response, next: Ne
   }
 };
 
-export default authMiddleware;
+export { authMiddleware, AuthenticatedRequest };

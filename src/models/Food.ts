@@ -12,4 +12,4 @@ const FoodSchema: Schema = new Schema({
   createdBy: { type: Schema.Types.ObjectId, ref: 'User', required: true },
 });
 
-export default mongoose.model<IFood>('Food', FoodSchema);
+export const Food = mongoose.model<IFood>('Food', FoodSchema);

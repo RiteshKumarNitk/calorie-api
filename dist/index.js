@@ -7,6 +7,9 @@ var express_1 = __importDefault(require("express"));
 var mongoose_1 = __importDefault(require("mongoose"));
 var dotenv_1 = __importDefault(require("dotenv"));
 var cors_1 = __importDefault(require("cors"));
+var auth_1 = __importDefault(require("./routes/auth"));
+var food_1 = __importDefault(require("./routes/food"));
+var log_1 = __importDefault(require("./routes/log"));
 dotenv_1.default.config();
 var app = (0, express_1.default)();
 app.use(express_1.default.json());
@@ -26,4 +29,7 @@ app.use(function (err, req, res, next) {
     console.error(err.stack);
     res.status(500).send('Something went wrong!');
 });
+app.use('/auth', auth_1.default);
+app.use('/foods', food_1.default); // Apply authMiddleware to specific routes in the router
+app.use('/logs', log_1.default); // Apply authMiddleware to specific routes in the router
 //# sourceMappingURL=index.js.map

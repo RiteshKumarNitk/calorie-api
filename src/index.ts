@@ -2,6 +2,10 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import authRoutes from './routes/auth';
+import foodRoutes from './routes/food';
+import logRoutes from './routes/log';
+import { authMiddleware } from './middleware/authMiddleware';
 
 dotenv.config();
 
@@ -26,3 +30,7 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
   console.error(err.stack);
   res.status(500).send('Something went wrong!');
 });
+
+app.use('/auth', authRoutes);
+app.use('/foods', foodRoutes); // Apply authMiddleware to specific routes in the router
+app.use('/logs', logRoutes); // Apply authMiddleware to specific routes in the router

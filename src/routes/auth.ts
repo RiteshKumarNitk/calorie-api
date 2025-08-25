@@ -1,8 +1,8 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import User from '../models/User';
-
+import { User } from '../models/User';
+// @ts-ignore: Relative import path will be correct after compilation
 const router = Router();
 
 // POST /auth/signup
