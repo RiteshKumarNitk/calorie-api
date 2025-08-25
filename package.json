@@ -1,5 +1,5 @@
 {
-  "name": "node-express-api-ts",
+  "name": "express-api-ts",
   "description": "Simple api sample in Node",
   "version": "1.0.0",
   "private": true,
@@ -12,11 +12,20 @@
   "author": "Google LLC",
   "license": "Apache-2.0",
   "dependencies": {
-    "express": "^4.21.2"
+    "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/jsonwebtoken": "^9.0.10",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.18.0"
   },
   "devDependencies": {
+    "@types/node": "^20.12.12",
     "nodemon": "^3.1.0",
-    "typescript": "^5.4.5",
-    "@types/node": "^20.12.12"
-  }
+    "typescript": "^5.4.5"
+  },
+  "keywords": []
 }
